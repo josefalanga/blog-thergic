@@ -1,0 +1,4 @@
+User-agent: * 
+Disallow: https://log.thergic.ar/config/*
+
+Sitemap: https://log.thergic.ar/sitemap.xml

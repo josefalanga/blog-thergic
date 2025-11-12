@@ -1,0 +1,188 @@
+/* === Core Layout === */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+  background-color: #1e1f22;
+  color: #d9d9d9;
+  line-height: 1.6;
+  font-size: 21px;
+  text-align: center;
+}
+
+/* Center content area */
+body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: left;
+  overflow-x: hidden;
+}
+
+/* === Logo === */
+.logo {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.logo img {
+  max-width: 512px;
+  width: 80%;
+  height: auto;
+  display: inline-block;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* === Top Navigation === */
+.topbar {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.topbar a {
+  color: #82aaff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.topbar a:hover {
+  color: #ffb454;
+}
+.topbar .sep {
+  color: #555;
+  margin: 0 8px;
+}
+
+/* === Headings === */
+h1, h2, h3, h4 {
+  color: #82aaff; /* unified cyan accent */
+  font-weight: 600;
+  margin-top: 2.2em;
+  margin-bottom: 0.6em;
+}
+h1 {
+  color: #78dce8; /* cool cyan for logo harmony */
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+/* === Paragraphs & Links === */
+p {
+  margin: 0.8em 0;
+}
+a {
+  color: #82aaff;
+  text-decoration: none;
+}
+a:hover {
+  color: #ffb454;
+  text-decoration: underline;
+}
+
+/* === Responsive Images === */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em auto;
+  border-radius: 6px;
+}
+figure img {
+  display: block;
+  margin: 0 auto;
+}
+figcaption {
+  font-size: 0.8em;
+  color: #aaa;
+  text-align: center;
+  margin-top: 0.3em;
+}
+
+/* === Inline Code === */
+code {
+  background: #2b2d31;
+  color: #ffd866;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.7em;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* === Code Blocks === */
+pre.sourceCode {
+  background: #2b2d31;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 0.7m 0;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* Monokai-style syntax colors */
+.sourceCode .kw  { color: #ff6188; }   /* keyword */
+.sourceCode .co  { color: #727072; }   /* comment */
+.sourceCode .st  { color: #a9dc76; }   /* string */
+.sourceCode .va  { color: #78dce8; }   /* variable */
+.sourceCode .fu  { color: #ffd866; }   /* function */
+.sourceCode .op  { color: #ffb454; }   /* operator */
+.sourceCode .bu  { color: #82aaff; }   /* built-in */
+
+/* === Blockquotes === */
+blockquote {
+  border-left: 3px solid #82aaff;
+  padding-left: 1em;
+  margin: 1.2em 0;
+  color: #c0c0c0;
+  background: #232428;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+/* === Lists === */
+ul, ol {
+  padding-left: 1.6em;
+}
+ul li, ol li {
+  margin-bottom: 0.3em;
+}
+
+/* === Tables === */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2em 0;
+  font-size: 0.95em;
+}
+th, td {
+  border: 1px solid #2b2d31;
+  padding: 0.6em 0.8em;
+}
+th {
+  background: #2b2d31;
+  color: #ffb454;
+  text-align: left;
+}
+tr:nth-child(even) td {
+  background: #232428;
+}
+
+/* === Horizontal Rules === */
+hr {
+  border: none;
+  border-top: 1px solid #2b2d31;
+  margin: 2em 0;
+}
+
+/* === Footer === */
+.footer {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  margin-top: 3em;
+}
+.footer a {
+  color: #82aaff;
+}
+.footer a:hover {
+  color: #ffb454;
+}
