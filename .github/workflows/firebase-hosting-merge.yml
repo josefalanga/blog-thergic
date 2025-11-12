@@ -16,9 +16,20 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: sudo apt-get install -y pandoc && sudo chmod +x build.sh && build.sh
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: git-checkout
+        uses: actions/checkout@v4
+
+      - name: Install pandoc
+        run: sudo apt-get install -y pandoc
+
+      - name: Get uprise
+        run: git clone https://github.com/josefalanga/uprise.git
+
+      - name: Build
+      - run: bash uprise/arise build source public
+
+      - name: Firebase Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_THERGIC_BLOG }}
