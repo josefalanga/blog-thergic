@@ -35,9 +35,9 @@ After reading a bit about this blobby friends, and the threshold thing, SDFs are
 
 ![Note how each letter has this "weird" gradient to black, that's the SDF.](FontAtlasExample.png)
 
-If you apply a threshold function to that, you get these:
+If you apply a threshold function to that, you get this:
 
-![at 66%](FontAtlasExample66.png) ![at 50%](FontAtlasExample50.png) ![at 33%](FontAtlasExample33.png)
+![50% threshold](FontAtlasExample50.png)
 
 You get the idea, the gradient combined with the threshold define the font "boldness". The bigger the threshold, the more pixels are turned white. Let's see what happens if we do the same for circles. A quick Photopea idea shows we are into something:
 
