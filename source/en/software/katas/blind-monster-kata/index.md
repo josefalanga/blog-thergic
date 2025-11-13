@@ -7,9 +7,8 @@ Language:: "en"
 Thumbnail:: "kanagawa.jpg"
 Published Date:: "2025-09-08"
 Modified Date:: "2022-09-08"
-
-content_header:: "false"
-rss_hide:: "true"
+content_header:: "true"
+rss_hide:: "false"
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->
 # Blind Monster Kata
 ## Constrains

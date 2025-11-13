@@ -7,9 +7,8 @@ Language:: "en"
 Thumbnail:: "arise-icon.png"
 Published Date:: "2009-04-16"
 Modified Date:: "2025-10-13"
-
-content_header:: "false"
-rss_hide:: "true"
+content_header:: "true"
+rss_hide:: "false"
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->
 
 # Vertical Slice vs. Horizontal Layer

@@ -8,7 +8,6 @@ Language:: "en"
 Thumbnail:: "arise-icon.png"
 Published Date:: "2025-09-08"
 Modified Date:: "2022-09-08"
-
 content_header:: "false"
 rss_hide:: "true"
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->

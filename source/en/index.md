@@ -1,13 +1,8 @@
 <!-- BEGIN ARISE ------------------------------
-Title:: "Index: English"
-
+Title:: "Posts"
 Author:: "Jose Falanga"
-Description:: "English Index"
+Description:: "English Posts"
 Language:: "en"
-Thumbnail:: ""
-Published Date:: ""
-Modified Date:: ""
-
 toc:: "true"
 content_header:: "false"
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->

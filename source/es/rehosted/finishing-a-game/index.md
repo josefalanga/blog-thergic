@@ -7,9 +7,8 @@ Language:: "es"
 Thumbnail:: "arise-icon.png"
 Published Date:: "2010-09-17"
 Modified Date:: "2025-11-03"
-
-content_header:: "false"
-rss_hide:: "true"
+content_header:: "true"
+rss_hide:: "false"
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->
 # Terminando un juego
 

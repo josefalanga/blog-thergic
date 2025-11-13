@@ -7,9 +7,8 @@ Language:: "en"
 Thumbnail:: "arise-icon.png"
 Published Date:: "2008-10-03"
 Modified Date:: "2025-10-13"
-
-content_header:: "false"
-rss_hide:: "true"
+content_header:: "true"
+rss_hide:: "false"
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->
 
 # Find the Fun First
