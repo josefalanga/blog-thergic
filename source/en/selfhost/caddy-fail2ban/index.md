@@ -276,6 +276,7 @@ sudo cat /var/log/caddy/access.log | grep "195.178.110.201" > attack
 ## Success!
 
 If you followed the steps above, your services are now hardened against a lot of common cases and you will not waste CPU, network or any resource that would compromise your services availability. Of course this doesn't magically solve all cases, and you can still harden your self-hosted stuff. It's a stepping stone in the right direction.
+
 ## Support
 
 If you liked this article, please support these amazing projects:
