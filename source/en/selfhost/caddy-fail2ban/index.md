@@ -215,15 +215,6 @@ Explanation:
 
 So, if your python bot triggers 10 4xx errors across any of my services within a minute, you are officially in jail. You can adjust this to tighten or loosen the limits. The idea is to only capture bad-faith actors and not ban human users on accident, so you need to tune for false positives. It is hard for humans to make 10 offenses in 1 minute, usually bots do it, as they operate in fast bursts. If you want to also handle slow crawlers, you need to either increase the `findtime` or decrease the `maxretry`, or both.
 
-If you use APIs or frontend SPAs that make lots of failing requests, consider raising `maxretry` or excluding their IPs.
-
-If you need to unban someone (maybe yourself), use:
-
-```bash
-sudo fail2ban-client set caddy-400 unbanip <IP>
-```
-
-
 Reload the service:
 
 ```bash
@@ -251,6 +242,14 @@ Status for the jail: caddy-400
 ```
 
 That's it!
+
+If you use APIs or frontend SPAs that make lots of failing requests, consider raising `maxretry` or excluding their IPs.
+
+If you need to unban someone (maybe yourself), use:
+
+```bash
+sudo fail2ban-client set caddy-400 unbanip <IP>
+```
 
 ## Monitoring
 
