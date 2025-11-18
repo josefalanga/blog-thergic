@@ -208,6 +208,7 @@ bantime = 36000
 ```
 
 Explanation:
+
 - `maxretry`: how many fails are allowed? Just 10
 - `findtime`: how far in the past I need to look? 1 minute
 - `bantime`: how much time the ban will last? 10 hours
