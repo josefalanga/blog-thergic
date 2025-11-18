@@ -35,7 +35,7 @@ Just installing it protects you from SSH brute forcing, and many other common th
 
 Well, we can totally make those interact! Main idea is, Caddy logs stuff, Fail2Ban ingests those, and bans bots and crawlers. 
 
-Caddy logs include the http code each service assings to their response. So I had an idea for my first rule. Crawlers poll your routes and paths in attempts to grab exposed stuff, so they get a lot of 404s. Brute force attacks to login pages will end up in a lot of 403s, rate limiting is 429. You get the idea, bad faith actors will triggger a lot of 4xx errors, within short time windows.  
+Caddy logs include the http code each service assings to their response. So I had an idea for my first rule. Crawlers poll your routes and paths in attempts to grab exposed stuff, so they get a lot of 404s. Brute force attacks to login pages will end up in a lot of 403s, rate limiting is 429. You get the idea, bad faith actors will trigger a lot of 4xx errors, within short time windows.  
 
 ## Implementation
 
@@ -45,7 +45,7 @@ Caddy logs include the http code each service assings to their response. So I ha
 
 First, go and pick an [install method](https://caddyserver.com/docs/install). I'm using plain debian, so I went with the `apt` option:
 
-```
+```bash
 sudo apt install caddy
 sudo systemctl enable --now caddy
 ```
@@ -54,7 +54,7 @@ I will use the Caddyfile to achieve all my goals. I will not delve too deep into
 
 Your Caddyfile usually sits at `/etc/caddy/Caddyfile`. I like to create a symlink in the home dir for easy access:
 
-```
+```bash
 sudo ln -s /etc/caddy/Caddyfile ~/
 ```
 
@@ -62,13 +62,13 @@ sudo ln -s /etc/caddy/Caddyfile ~/
 
 So we edit it:
 
-```
+```bash
 sudo nano ~/Caddyfile
 ```
 
 This is what mine looked like like (actual domain names replaced):
 
-```
+```bash
 subdomain.thergic.ar {
         reverse_proxy localhost:1234
 }
@@ -84,7 +84,7 @@ notallowed.access.com {
 
 Just with that, Caddy is already redirecting stuff, and managing SSL certs. Amazing, right? So, now  I'm going to introduce this block for all domains:
 
-```
+```bash
 log {
 	output file /var/log/caddy/access.log
 	format console
@@ -95,7 +95,7 @@ The `format` option is important so Fail2Ban can properly parse this with the re
 
 I understand this also can be configured globally, but I wanted to make it case by case, so I can keep my rules flexible. Final Caddyfile looks like this:
 
-```
+```bash
 subdomain.thergic.ar {
         reverse_proxy localhost:1234
         log {
@@ -123,13 +123,13 @@ notallowed.access.com {
 
 Save it and reload the caddy service:
 
-```
+```bash
 sudo systemctl restart caddy
 ```
 
 On top of Caddy's magic, we now have access logs! This is how an actual line looks like:
 
-```
+```bash
 2025/11/14 04:26:51.951	INFO	http.log.access.log1	handled request	{"request": {"remote_ip": "195.178.110.201", "remote_port": "40968", "client_ip": "195.178.110.201", "proto": "HTTP/1.1", "method": "GET", "host": "subdomain.thergic.ar", "uri": "/.env", "headers": {"Accept-Encoding": ["gzip, deflate"], "User-Agent": ["Python/3.10 aiohttp/3.13.1"], "Cookie": ["REDACTED"], "Accept": ["*/*"]}, "tls": {"resumed": false, "version": 772, "cipher_suite": 4865, "proto": "http/1.1", "server_name": "subdomain.thergic.ar"}}, "bytes_read": 0, "user_id": "", "duration": 0.010455752, "size": 11, "status": 404, "resp_headers": {"Content-Length": ["11"], "Cache-Control": ["max-age=0, private, must-revalidate, no-transform"], "Content-Type": ["text/plain;charset=utf-8"], "X-Content-Type-Options": ["nosniff"], "X-Frame-Options": ["SAMEORIGIN"], "Via": ["1.1 Caddy"], "Alt-Svc": ["h3=\":443\"; ma=2592000"], "Date": ["Fri, 14 Nov 2025 04:26:51 GMT"]}}
 ```
 
@@ -138,11 +138,12 @@ Look at that! This crawler is hunting for my server secrets! Note it's trying to
 And the magic sections are `"remote_ip": "195.178.110.201",` and `"status": 404`. This means we know _WHO_ this person is, and _WHAT_ is the wrongdoing. Let's configure Fail2Ban to put this sucker into bot jail.
 
 ![Time to Fail2Ban](bonk-jail.png)
+
 ### Fail2Ban
 
 #### Install
 
-```
+```bash
 sudo apt install fail2ban caddy
 sudo systemctl enable --now fail2ban
 ```
@@ -151,13 +152,13 @@ That already enabled a lot of different protections for your server. One of the 
 
 Wanna try it? Execute this:
 
-```
+```bash
 watch sudo fail2ban-client status sshd
 ```
 
 That will output something like this and update every 2 seconds:
 
-```
+```bash
 Status for the jail: sshd
 |- Filter
 |  |- Currently failed:	0
@@ -175,13 +176,13 @@ Now open another terminal, and try and fail to login with ssh. You will see the 
 
 Well, as Minecraft is the sum of Mine and Craft, Fail2Ban needs Fails and Ban (rules) to work. Let's start with the fails. We are going to create a new filter:
 
-```
+```bash
 sudo nano /etc/fail2ban/filter.d/caddy-400.conf
 ```
 
 And inside we paste the following:
 
-```
+```bash
 [Definition]
 failregex = ^.*"remote_ip": "<HOST>".*"status": 4[0-9][0-9]
 ignoreregex =
@@ -191,13 +192,13 @@ This regex will match anything in the range of 4xx. You can opt to only match so
 
 Now, let's create a jail for the bans:
 
-```
+```bash
 sudo nano /etc/fail2ban/jail.d/caddy-400.conf
 ```
 
 Contents example:
 
-```
+```bash
 [caddy-400]
 enabled = true
 logpath = /var/log/caddy/access.log
@@ -215,19 +216,19 @@ So, if your python bot triggers 10 4xx error across any of my services within a 
 
 Reload the service:
 
-```
+```bash
 sudo systemctl restart fail2ban
 ```
 
 You can check the jail status with:
 
-```
+```bash
 sudo fail2ban-client status caddy-400
 ```
 
 Outputs:
 
-```
+```bash
 Status for the jail: caddy-400
 |- Filter
 |  |- Currently failed:	4
@@ -245,13 +246,13 @@ That's it!
 
 This can probably be improved. You could get email alerts when fail2ban acts if you like. I didn't configure that, so I'm using this to monitor bans manually after the fact:
 
-```
+```bash
 sudo cat /var/log/fail2ban.log.1 | grep Ban
 ```
 
 That outputs something like:
 
-```
+```bash
 [date] fail2ban.actions        [708]: NOTICE  [caddy-400] Ban 195.178.110.201
 [date] fail2ban.actions        [709]: NOTICE  [caddy-400] Ban 16.171.237.119
 [date] fail2ban.actions        [709]: NOTICE  [caddy-400] Ban 13.214.183.227
@@ -260,7 +261,7 @@ That outputs something like:
 
 That's the actual output of my server. And if you are curious about how that happened, you can go to caddy logs and check one particular ip:
 
-```
+```bash
 sudo cat /var/log/caddy/access.log | grep "195.178.110.201" > attack
 ```
 ## Success!
