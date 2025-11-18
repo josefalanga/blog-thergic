@@ -11,19 +11,19 @@ rss_hide:: "false"
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->
 # Using Caddy along with Fail2Ban to harden your services
 
-If you are looking for a guide on how to configure [caddy-fail2ban module](https://github.com/Javex/caddy-fail2ban), you are in the wrong place. This approach uses no extra modules, and requires both fail2ban and caddy to be installed on your host (no docker/container). You can use docker for everything else.
+If you are looking for a guide on how to configure [caddy-fail2ban module](https://github.com/Javex/caddy-fail2ban), you are in the wrong place. This approach uses no extra modules, and requires both Fail2Ban and Caddy to be installed on your host (no docker/container). You can use docker for everything else.
 
-This doesn't mean you cannot use containers for this at all (_you will notice using volumes smartly can totally allow this workflow_), but I'm choosing this setup because it is more straightforward for newcomers, as we won't delve in docker details.
+This doesn't mean you cannot use containers for this at all (_you will notice using volumes smartly can totally allow this workflow_), but I'm choosing this setup because it is more straightforward for newcomers, as we won't delve into docker details.
 
 That said, let's start dissecting this.
 
 ## What's Caddy
 
-Well, can't do justice to the absolute beast Caddy is, but you can go check their [Website](https://caddyserver.com/) and their [Docs](https://caddyserver.com/docs/). In short, I'm using Caddy as a reverse proxy and access point for all my self-hosted services. Caddy manages redirecting stuff to the appropiate containers, depending on what domain the request is entering from. This means that I can set `something.thergic.ar` regular `80` port to be forwarded to some internal docker port. It also magically manages SSL certificates through [Let's Encrypt](https://letsencrypt.org/), so it also redirects stuff through `443`, no extra setup needed. It's not that `certbot` is hard to use, but Caddy makes the whole thing trivial. It can also be set up to create wildcard certificates. It can do way more than that, and I'll probably expand on this later, but that's what I've got so far.
+Well, can't do justice to the absolute beast Caddy is, but you can go check their [Website](https://caddyserver.com/) and their [Docs](https://caddyserver.com/docs/). In short, I'm using Caddy as a reverse proxy and access point for all my self-hosted services. Caddy manages redirecting stuff to the appropriate containers, depending on which domain the request comes in from. This means that I can set `something.thergic.ar` regular `80` port to be forwarded to some internal docker port. It also magically manages SSL certificates through [Let's Encrypt](https://letsencrypt.org/), so it also redirects stuff through `443`, no extra setup needed. It's not that `certbot` is hard to use, but Caddy makes the whole thing trivial. It can also be set up to create wildcard certificates. It can do way more than that, and I'll probably expand on this later, but that's what I've got so far.
 
 ## What's Fail2Ban
 
-Their own [github](https://github.com/fail2ban/fail2ban) readme starts with a pretty good definition: 
+Their own [github](https://github.com/fail2ban/fail2ban) readme starts with a pretty good definition:
 
 > Fail2Ban: ban hosts that cause multiple authentication errors
 
@@ -35,7 +35,7 @@ Just installing it protects you from SSH brute-forcing, and many other common th
 
 Well, we can totally make those interact! Main idea is, Caddy logs stuff, Fail2Ban ingests those, and bans bots and crawlers. 
 
-Caddy logs include the http code each service assigns to their response. So I had an idea for my first rule. Crawlers poll your routes and paths in attempts to grab exposed stuff, so they get a lot of 404s. Brute force attacks to login pages will end up in a lot of 403s, rate limiting is 429. You get the idea, bad-faith actors will trigger a lot of 4xx errors, within short time windows.  
+Caddy logs include the HTTP code each service assigns to their response. So I had an idea for my first rule. Crawlers poll your routes and paths in an attempt to grab exposed stuff, so they get a lot of 404s. Brute force attacks to login pages will end up in a lot of 401s or 403s, rate limiting is 429. You get the idea, bad-faith actors will trigger a lot of 4xx errors, within short time windows.  
 
 ## Implementation
 
@@ -213,6 +213,15 @@ Explanation:
 - `bantime`: how much time the ban will last? 10 hours
 
 So, if your python bot triggers 10 4xx errors across any of my services within a minute, you are officially in jail. You can adjust this to tighten or loosen the limits. The idea is to only capture bad-faith actors and not ban human users on accident, so you need to tune for false positives. It is hard for humans to make 10 offenses in 1 minute, usually bots do it, as they operate in fast bursts. If you want to also handle slow crawlers, you need to either increase the `findtime` or decrease the `maxretry`, or both.
+
+If you use APIs or frontend SPAs that make lots of failing requests, consider raising `maxretry` or excluding their IPs.
+
+If you need to unban someone (maybe yourself), use:
+
+```bash
+sudo fail2ban-client set caddy-400 unbanip <IP>
+```
+
 
 Reload the service:
 
