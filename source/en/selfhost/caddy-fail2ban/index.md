@@ -280,6 +280,7 @@ If you followed the steps above, your services are now hardened against a lot of
 ## Support
 
 If you liked this article, please support these amazing projects:
+
 - Support/contribute to [Fail2Ban](https://github.com/fail2ban/fail2ban)
 - Become a [Caddy](https://caddyserver.com/sponsor) sponsor
 - Donate to [Let's Encrypt](https://letsencrypt.org/donate/)
