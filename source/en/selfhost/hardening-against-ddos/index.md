@@ -30,7 +30,8 @@ Each layer handles threats that the others cannot:
 Together they provide strong L3, L4, and L7 DDoS protection. As usual, this can be expanded an you can even have an extra layer on top, like Cloudflare, but is a good introduction to these topics.
 
 ![](ddos-layers.png)
-## Kernel Hardening
+
+## 1. Kernel Hardening
 
 Improves TCP resilience, handles malformed traffic, and enables a modern congestion algorithm.
 
@@ -59,7 +60,7 @@ Apply:
 sudo sysctl -p
 ```
 
-## Firewall Hardening
+## 2. Firewall Hardening
 
 Implements per-IP rate limiting for TCP handshakes and blocks UDP floods.
 
@@ -141,7 +142,7 @@ Apply:
 sudo nft -f /etc/nftables.conf
 ```
 
-## Fail2ban HTTP Flood Protection
+## 3. Fail2ban HTTP Flood Protection
 
 Blocks clients generating excessive HTTP requests in a short window.
 
@@ -192,7 +193,7 @@ Restart:
 sudo systemctl restart fail2ban
 ```
 
-## Caddy Fingerprinting & Flood Protection
+## 4. Caddy Fingerprinting & Flood Protection
 
 Removes identifying headers, hides error pages, and adds local flood protection.
 
