@@ -28,10 +28,10 @@ body {
   text-shadow: 0 -2px 203px rgba(255,255,255,0.7), 0 1px 2px rgba(0,0,0,0.7), 0 4px 6px rgba(0,0,0,0.5);
   display: block;
   line-height: 1;
-  background: linear-gradient(180deg, #8fa0ff, #ff6000);
+  background: linear-gradient(180deg, #71ffe9, #ff9250);
   background-clip: text;
   -webkit-background-clip: text;
-  color: #ffffff2e;
+  color: transparent;
   user-select: none;
   -webkit-user-select: none;
   position: relative;
@@ -39,11 +39,9 @@ body {
 
 .logo .subtitle {
   position: relative;
-  display: inline-block; /* critical */
-  background: inherit;   /* copies parent gradient in Chromium */
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  display: block;
+  background-clip: inherit;
+  background: linear-gradient(180deg,#ff9250, #71ffe9);
   font-size: 0.3em; 
   margin-top: 0.15em; 
   line-height: 1;
