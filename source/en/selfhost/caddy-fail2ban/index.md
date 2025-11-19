@@ -1,8 +1,8 @@
 <!-- BEGIN ARISE ------------------------------
-Title:: "Using Caddy along with Fail2Ban to harden your services"
+Title:: "Using Caddy along with Fail2Ban"
 
 Author:: "Jose Falanga"
-Description:: "Step by step guide to harden your services"
+Description:: "Step by step guide to harden your services against common bot attacks"
 Language:: "en"
 Published Date:: "2025-11-18"
 Modified Date:: "2022-11-18"
