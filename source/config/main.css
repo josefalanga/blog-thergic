@@ -44,6 +44,9 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  font-size: 0.3em; 
+  margin-top: 0.15em; 
+  line-height: 1;
 }
 
 /* === Top Navigation === */
