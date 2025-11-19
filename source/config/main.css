@@ -30,9 +30,12 @@ body {
   display: block;
   line-height: 1;
   background: linear-gradient(180deg, #0028ff, #ff6000);
-    background-clip: border-box;
+  background-clip: border-box;
   -webkit-background-clip: text;
   color: #ffffff2e;
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; 
 }
 
 .subtitle {

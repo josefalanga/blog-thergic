@@ -1,4 +1,4 @@
-
+![[Pasted image 20251119201844.png]]
 <!-- BEGIN ARISE ------------------------------
 Title:: "Hypomnēma"
 
