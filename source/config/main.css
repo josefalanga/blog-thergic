@@ -118,6 +118,10 @@ pre.sourceCode {
   font-family: "JetBrains Mono", "Fira Code", monospace;
 }
 
+code, pre.sourceCode {
+  line-height: 1;
+}
+
 /* Monokai-style syntax colors */
 .sourceCode .kw  { color: #ff6188; }   /* keyword */
 .sourceCode .co  { color: #727072; }   /* comment */
