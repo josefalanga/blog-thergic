@@ -42,7 +42,7 @@ body {
   display: block;
   background-clip: text;
   -webkit-background-clip: text;
-  background: linear-gradient(180deg,#ff9250, #71ffe9);
+  background: linear-gradient(180deg, #ff9250, #ff6000);
   font-size: 0.3em; 
   margin-top: 0.15em; 
   line-height: 1;
