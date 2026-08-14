@@ -49,7 +49,8 @@ The threshold is the magic number that decides how everything looks. Too high an
 
 So, let's see how this looks implemented in Godot!
 
-```gdshader
+
+```
 shader_type canvas_item;
 
 // Every ball is packed in one vec3: .xy is its position (viewport pixels) and
