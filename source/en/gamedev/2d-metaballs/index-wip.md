@@ -2,7 +2,7 @@
 Title:: "2D Metaballs"
 
 Author:: "Jose Falanga"
-Description:: "Basic understanding of SDF ann Metaballs"
+Description:: "Basic understanding of SDF and Metaballs"
 Language:: "en"
 Published Date:: ""
 Modified Date:: ""
@@ -21,13 +21,13 @@ First place to look at is the [Wikipedia page](https://en.wikipedia.org/wiki/Met
 
 Wikipedia also has great pictures:
 
-![ The interaction between two differently coloured 3D positive metaballs, created in Bryce. _Note that the two smaller metaballs combine to create one larger object._](Metaball_contact_sheet.png)
+![The interaction between two differently coloured 3D positive metaballs, created in Bryce. _Note that the two smaller metaballs combine to create one larger object._](Metaball_contact_sheet.png)
 
 So, these blobby objects are basically circular or spherical shapes (depending on how many dimensions you are going to handle) that get merged together in close vicinity, smoothly. It uses a threshold to determine if stuff is or is not part of the shape. Technically these are dots with some mass or radius, if they get close enough, that radius overlap turns into a "bridge" of sort between the two. Well, technically they can be more than 2, that's when stuff starts looking organic, but you get the idea.
 
-One interesting thing to note, is that their "mass" is combined, so two balls of the same mass completely combined, should end in a bigger ball (I guess equivalent to the mass of both added up or something like that). 
+One interesting thing to note is that their fields combine by simple addition. Two overlapping balls of the same strength form a single larger ball, but it won't be twice as big: the resulting size grows sub-linearly with the combined field.
 
-Also, if any other properties exist in each ball, you could also merge them. In the picture, color is another thing that can gets merged. For the sake of simplicity, let's not do that.
+Also, if any other properties exist in each ball, you could also merge them. In the picture, color is another thing that can get merged. For the sake of simplicity, let's not do that.
 
 ## Signed Distance Fields
 
@@ -39,8 +39,10 @@ If you apply a threshold function to that, you get this:
 
 ![50% threshold](FontAtlasExample50.png)
 
-You get the idea, the gradient combined with the threshold define the font "boldness". The bigger the threshold, the more pixels are turned white. Let's see what happens if we do the same for circles. A quick Photopea idea shows we are into something:
+You get the idea, the gradient combined with the threshold define the font "boldness". The bigger the threshold, the more pixels are turned white. Let's see what happens if we do the same for circles. A quick Photopea experiment shows we are into something:
 
 ![This definitely looks like a blobby thing to me.](MetaballsIdea.png)
 
-So, it seems like points, turned into radial gradients, multiplied, and then having a threshold function applied looks promising. Let's try to implement it in Godot!
+So, it seems like points, turned into radial gradients, added together, and then having a threshold function applied looks promising.
+
+One detail worth keeping in mind: the threshold decides how everything looks. Too high and the balls stay separate circles, too low and they all merge into a single blob. There's a sweet spot in between, and we'll tune it once we implement this in Godot.
