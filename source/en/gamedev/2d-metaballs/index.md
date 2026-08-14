@@ -4,8 +4,8 @@ Title:: "2D Metaballs"
 Author:: "Jose Falanga"
 Description:: "Basic understanding of SDF and Metaballs"
 Language:: "en"
-Published Date:: ""
-Modified Date:: ""
+Published Date:: "2026-08-14"
+Modified Date:: "2026-08-14"
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->
 
 # 2D Metaballs
@@ -96,7 +96,7 @@ void fragment() {
 
 Having some GDScript to control it (handing over the position and radius every frame, so we have movement) looks like this:
 
-![50% Threshold, animated](godot.webm)
+![50% Threshold, animated](godot.gif)
 
 > Hypnotic, isn't it? Very lava-lampy.
 
