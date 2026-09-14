@@ -11,6 +11,8 @@ content_header:: "true"
 rss_hide:: "false"
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->
 
+# Diseñando alrededor de una mecánica central
+
 > Originalmente publicado por Charmie Kim en el ahora desaparecido [blog de Funstorm Games](https://web.archive.org/web/20150317162320/http://www.funstormgames.com/blog/2012/06/designing-around-a-core-mechanic/). Luego republicado en [Gamasutra](https://web.archive.org/web/20120630131425/http://www.gamasutra.com/blogs/CharmieKim/20120612/172238/Designing_around_a_core_mechanic.php), donde lo leí originalmente, y se me quedó pegado desde entonces. Ese sobrevive en [GameDeveloper](https://www.gamedeveloper.com/design/designing-around-a-core-mechanic), pero ya no tiene imágenes, así que estoy republicando acá el texto original de Funstorm.
 
 En nuestro salvaje, salvaje mundo del diseño de juegos, es probable que cada diseñador tenga su propia tonalidad de metodología de diseño, siendo la falta de ésta un tipo de metodología propio. Me gustaría compartir un poquito de la mía.
@@ -31,7 +33,7 @@ Pero aún así, probablemente no queda muy claro qué es exactamente una mecáni
 - Los sistemas de **Progresión** forman la envolvente mecánica del juego, siendo la fuente de cambio dentro del sistema de juego a un nivel holístico.
 - La capa de **Narrativa** es la capa más externa, que pone en contexto a todas las capas internas.
 
-# **Innovación en el Gameplay**
+## Innovación en el Gameplay
 
 Ahora que entendés el modelo, ¿podés adivinar a qué juegos representa cada uno de estos diagramas núcleo?[![](CoreDiagramExamples.png "CoreDiagramExamples")](CoreDiagramExamples.png)
 
@@ -54,7 +56,7 @@ Hay algunas observaciones cualitativas que se pueden hacer de inmediato, sólo c
 
 - Algunas combinaciones de mecánicas son realmente atemporales, como la D. Es como un plato clásico de la cocina francesa – sabe bien, y es difícil de estropear.
 
-# **Móvil y Social**
+## Móvil y Social
 
 En el último año más o menos empecé a mirar los juegos sociales y móviles bajo esta luz, y de nuevo, es realmente fascinante ver cómo mapean.
 
@@ -75,11 +77,11 @@ B. CityVille
 
 No he abordado cómo encaja lo social/multijugador en todo esto; eso sería un post en sí mismo. Pero una buena medida para guiarse es que un juego verdaderamente social requeriría más de un jugador involucrado en cada una de las capas. Si yo hiciera un juego de Zynga más social, por ejemplo, haría de la recolección una actividad hecha con amigos (esto ya es el caso), la compra de edificios estaría en relación con los amigos (por ejemplo, si yo compro el edificio del Estudio de Diseño de Moda y vos comprás la Boutique de Ropa, yo podría proveerte de ropa para tu edificio y podríamos dividir las ganancias, ¿no?) etc. ¿Es de extrañar que los MMO como WoW sean tan poderosos? Toman la fórmula clásica del RPG y le aplican dinámicas sociales en cada paso del camino.
 
-# **Juegos de Estrategia a.k.a. El Núcleo Lento**
+## Juegos de Estrategia a.k.a. El Núcleo Lento
 
 Las mecánicas centrales que he visto en otros juegos hasta ahora tienen un 'divertido' físico por sí solas. Un buen diseñador trabajando en un plataformero prestaría mucha atención a la física de un solo salto para que la actividad central se sienta bien incluso sin las mecánicas secundarias o la progresión. Aún así, sería un error pensar que toda mecánica central necesita un bucle único tan nervioso y apretado. Mirando los juegos de estrategia, por ejemplo, la mecánica central suele ser la 'colocación de unidades'. Físicamente hablando, no hay nada inherentemente alegre en colocar una unidad en un juego de estrategia, pero míralo como una actividad cerebral y arroja luz sobre qué tan profunda y significativa puede ser esta mecánica central y por qué los juegos de estrategia son tan divertidos. Notá también que en los juegos de estrategia, la mecánica central es mucho más compleja e involucra muchos bucles de retroalimentación diferentes dentro de ella. En otras palabras, hay mucha más información procesándose dentro de la interacción justo en el núcleo.
 
-# **Múltiples Núcleos y Cambios Modales**
+## Múltiples Núcleos y Cambios Modales
 
 También agregaría una advertencia acá y diría que no todos los juegos encajan tan bien en este molde, y esos son algunos de los más divertidos. Muchos juegos exitosos hacen cambios modales donde pasás de un diagrama núcleo a otro. Esto funciona muy bien, creo, si un conjunto de mecánicas es más nervioso y el otro más relajado, y el cambio modal se usa para el ritmo. Un gran ejemplo de esto es una de mis franquicias favoritas de todos los tiempos, ¡Mass Effect!
 

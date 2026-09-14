@@ -11,6 +11,8 @@ content_header:: "true"
 rss_hide:: "false"
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->
 
+# Designing around a core mechanic
+
 > Originally published by Charmie Kim at the now defunct [Funstorm Games blog](https://web.archive.org/web/20150317162320/http://www.funstormgames.com/blog/2012/06/designing-around-a-core-mechanic/). Then reposted to [Gamasutra](https://web.archive.org/web/20120630131425/http://www.gamasutra.com/blogs/CharmieKim/20120612/172238/Designing_around_a_core_mechanic.php), where I originally read it, and it kinda stuck with me since. That one survives at [GameDeveloper](https://www.gamedeveloper.com/design/designing-around-a-core-mechanic), but it no longer has pictures, so I'm reposting the original Funstorm text here.
 
 In our wild wild game design world every designer is likely to have their own shade of design methodology, lack thereof being a kind of methodology of its own. I’d like to share a bit of mine.
@@ -31,7 +33,7 @@ But still, it’s probably not very clear what exactly is a ‘Core’ mechanic 
 - **Progression** systems form the mechanical envelope of the game, being the source of change within the game system at a holistic level.
 - The **Narrative** layer is the outer most layer that puts all the inner layers within it into context.
 
-# **Gameplay Innovation**
+## Gameplay Innovation
 
 Now that you understand the model, could you guess which games each of these core diagrams represent?[![](CoreDiagramExamples.png "CoreDiagramExamples")](CoreDiagramExamples.png)
 
@@ -54,7 +56,7 @@ There are some qualitative observations that can be made immediately, just from 
 
 - Some combinations of mechanics are truly timeless, such as D. It’s like a classic dish in French cuisine – it tastes good, and it’s hard to mess with.
 
-# **Mobile and Social**
+## Mobile and Social
 
 In the last year or so I started looking at social and mobile games in this light, and again, it’s really fascinating to see how they map.
 
@@ -75,11 +77,11 @@ Now some more observations!
 
 I haven’t tackled how social/multiplayer fits into all this, that would be a post of its own. But a good measure to go by is, a truly social game would require more than one player involved at each of the layers. If I were to make a Zynga game more social, for example, I would make collecting an activity done with friends (this is already the case), buying buildings would be in relation to friends (for example, if I buy the Fashion Design Studio building and you buy the Clothing Boutique building, I could supply you with clothes for your building and we could split profits, right?) etc. Is it any wonder MMO games like WoW are so powerful? They take the classic RPG formula and apply social dynamics every step of the way.
 
-# **Strategy Games a.k.a. The Slow Core**
+## Strategy Games a.k.a. The Slow Core
 
 The core mechanics I’ve looked at in other games so far have a physical ‘fun’ to it on its own. A good designer working on a platformer would pay a lot of attention to the physics of a single jump so that the core activity feels good even without the secondary mechanics or progression. Yet, it would be a mistake to think that every core mechanic needs to have such a twitchy tight singular loop. Looking at strategic games, for example, the core mechanic is often ‘unit placement’. Physically speaking, there’s nothing innately joyful about placing a unit in a strategy game, but look at it as a cerebral activity and it sheds light on how deep and meaningful this core mechanic can be and why strategy games are so much fun. Note also that with strategy games, the core mechanic is far more complex and involves lots of different feedback loops within it. In other words, there’s a lot more information being processed within the interaction right in the core!
 
-# **Multiple Cores and Modal Shifts**
+## Multiple Cores and Modal Shifts
 
 I would also add a caveat here and say that not all games fit this mould so well, and those are some of the most fun. Many successful games do modal shifts where you go from one core diagram to another. This works really well, I think, if one set of mechanics is more twitch and the other more relaxed, and the modal shift is used for pacing. A great example of this is one of my favourite game franchises of all time, Mass Effect!
 
