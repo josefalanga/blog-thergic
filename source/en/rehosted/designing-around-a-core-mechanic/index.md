@@ -15,7 +15,7 @@ rss_hide:: "false"
 
 In our wild wild game design world every designer is likely to have their own shade of design methodology, lack thereof being a kind of methodology of its own. I’d like to share a bit of mine.
 
-When I was still a game design student in Vancouver, I was taught this life-changing design tool by [Wil Mozell](https://web.archive.org/web/20150317162320/http://www.mobygames.com/developer/sheet/view/developerId,31723/) - I don’t mean to name drop, I just owe a lot to this guy – over lunch at a White Spot. At least one mind was blown in that generic family-style restaurant that day. I’ve been whipping this tool out to evaluate every bit of game design I do ever since. Trust  me, it’s amazing.  
+When I was still a game design student in Vancouver, I was taught this life-changing design tool by [Wil Mozell](https://www.mobygames.com/person/31723/william-m-mozell/) - I don’t mean to name drop, I just owe a lot to this guy – over lunch at a White Spot. At least one mind was blown in that generic family-style restaurant that day. I’ve been whipping this tool out to evaluate every bit of game design I do ever since. Trust  me, it’s amazing.  
 The tool is a deceptively simple diagram that I call the ‘Core Diagram’:
 
 [![](CoreDiagram.png "CoreDiagram")](CoreDiagram.png)
@@ -39,7 +39,7 @@ The answers are:
 A. Super Mario Bros.  
 B. Portal  
 C. Flower  
-D. Every fantasy RPG ever made ![:)](icon_smile.gif)
+D. Every fantasy RPG ever made :)
 
 There are some qualitative observations that can be made immediately, just from looking at these examples.
 
@@ -71,7 +71,7 @@ Now some more observations!
 
 - In comparison, CityVille is amazingly elegant within the inner 3 layers. Look how tightly collecting currency weaves into buying buildings, and collecting XP weaves into unlocking buildings, which weaves back into buying buildings, and then again, weaves back into collecting from them. Beautiful! But, there is still a weakness, and it’s a big one. Exactly how does clicking buildings to collect from them (it’s not even made very clear that they are supposed to be taxes) and unlocking buildings (again, messaged in a very ‘game-y’ way with buildings unlocking at every level) make you a better mayor? CityVille could do well with some tweaks in how it integrates its overall narrative.
 
-- I don’t have a diagram here for all the Zynga games but my biggest beef with them is that almost every one of their virtual world games (other than their newer Indiana Jones game and the hidden object game) have the same 3 inner layers – collect/harvest, buy stuff, unlock stuff. It’s like they know how good it is and they wanted to explore that same design until noone wanted to play it anymore. ![:)](icon_smile.gif)
+- I don’t have a diagram here for all the Zynga games but my biggest beef with them is that almost every one of their virtual world games (other than their newer Indiana Jones game and the hidden object game) have the same 3 inner layers – collect/harvest, buy stuff, unlock stuff. It’s like they know how good it is and they wanted to explore that same design until noone wanted to play it anymore. :)
 
 I haven’t tackled how social/multiplayer fits into all this, that would be a post of its own. But a good measure to go by is, a truly social game would require more than one player involved at each of the layers. If I were to make a Zynga game more social, for example, I would make collecting an activity done with friends (this is already the case), buying buildings would be in relation to friends (for example, if I buy the Fashion Design Studio building and you buy the Clothing Boutique building, I could supply you with clothes for your building and we could split profits, right?) etc. Is it any wonder MMO games like WoW are so powerful? They take the classic RPG formula and apply social dynamics every step of the way.
 
